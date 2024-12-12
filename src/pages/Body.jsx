@@ -3,18 +3,20 @@ import {useEffect, useState} from "react";
 
 const Body =({title})=>{
     const[currency,setCurrency] =useState("")
+    const[dataFetched,setData] =useState([])
     const cardContainer={
         display:"flex",
         flexWrap:"wrap",
         marginTop:"20px"
     }
-    // useEffect(()=>{
-    //     const url =window.location.href
-    //     const end =url.match(/[^/]+$/);
-    //    console.log(end)
-    //
-    // },[currency])
-
+    useEffect(()=>{
+        fetchData()
+    },[])
+    const fetchData =(async ()=>{
+        const response =await fetch("http://localhost:8080/api/v1/shop/get/all")
+        const data =await response.json()
+        setData(data.shopItemList)
+    })
 
 
     const titleTag =title?title:"Featured Products"
@@ -25,17 +27,13 @@ const Body =({title})=>{
                 <h1 style={title&&{textAlign:"center"}}>{titleTag}</h1>
             </div>
             <div className={"card__container"} style={cardContainer}>
-                <Card currency={currencyPresent} title={"Champion Lightweight Jacket"}/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
+                {
+                    dataFetched.map((item)=>(
+                        <Card currency={currencyPresent} title={item.name.trim()} image={item.images}/>
+                    ))
+                }
+
+
             </div>
         </div>
     )

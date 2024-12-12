@@ -1,0 +1,15 @@
+.aside__container{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+
+
+}
+.aside__container>div>img{
+    object-fit: cover;
+    height: 120px;
+    width: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+}
