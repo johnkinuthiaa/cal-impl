@@ -1,0 +1,34 @@
+.products__page{
+    display: flex;
+    gap: 5px;
+    margin-top: 30px;
+}
+.aside__container{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+
+}
+.aside__container>div>img{
+    object-fit: cover;
+    height: 120px;
+    width: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.aside__container>div:focus{
+    border: black;
+}
+.products__page__image__container>img{
+    height: 754.7px;
+    width: 566px;
+    border-radius: 10px;
+}
+.products__page__image__container{
+    flex: 0.6;
+}
+.products__page__description{
+    flex: 0.4;
+    line-height: 1.5;
+}

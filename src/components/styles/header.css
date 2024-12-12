@@ -1,0 +1,49 @@
+
+.heading{
+    cursor: pointer;
+    margin-top: 10px;
+}
+.shopping_cart button{
+    border: none;
+    outline: none;
+    background-color: #fff;
+    margin-left: 5px;
+    cursor: pointer;
+}
+nav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: color 0.15ms ease-out;
+    margin: 30px;
+    justify-content: space-evenly;
+}
+nav>div>a{
+    color: rgb(0,0,0);
+    text-decoration: none;
+}
+nav>div>a:visited{
+    color: rgb(0,0,0);
+}
+nav>div>a:hover{
+    color: gray;
+}
+.navigation,
+.heading{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+select{
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+    padding: 5px;
+
+}
