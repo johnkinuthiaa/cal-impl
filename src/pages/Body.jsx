@@ -14,8 +14,13 @@ const Body =({title})=>{
     },[])
     const fetchData =(async ()=>{
         const response =await fetch("http://localhost:8080/api/v1/shop/get/all")
-        const data =await response.json()
-        setData(data.shopItemList)
+        if (response.ok){
+            const data =await response.json()
+            setData(data.shopItemList)
+        }else{
+            throw new Error("error fetching data")
+        }
+
     })
 
 
@@ -28,8 +33,8 @@ const Body =({title})=>{
             </div>
             <div className={"card__container"} style={cardContainer}>
                 {
-                    dataFetched.map((item)=>(
-                        <Card currency={currencyPresent} title={item.name.trim()} image={item.images}/>
+                    dataFetched.map((item,key)=>(
+                        <Card currency={currencyPresent} title={item.name.trim()} image={item.images} key={key}/>
                     ))
                 }
 

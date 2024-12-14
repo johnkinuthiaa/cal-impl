@@ -10,10 +10,10 @@ const ProductPage =()=>{
     const title =url.match(/[^/]+$/)
 
     const[quantity,setQuantity] =useState(1)
-    const[size,setSize] =useState(1)
-
+    const [selectedImage, setSelectedImage] = useState('');
 
     const [dataFetched,setDataFetched] =useState([])
+
     useEffect(()=>{
         fetchDataByName()
     },[])
@@ -31,12 +31,12 @@ const ProductPage =()=>{
                     <div className={"products__page"} key={key}>
                         <div className={"aside__container__main"}>
                             {item.images.map((image)=>(
-                                <AsideContainer img={image} />
+                                <AsideContainer img={image} onClick={() => setSelectedImage(image)}/>
                             ))}
 
                         </div>
                         <div className={"products__page__image__container"}>
-                            <img src={""}/>
+                            <img src={selectedImage?selectedImage:item.images[0]}/>
 
                         </div>
                         <div className={"products__page__description"}>
