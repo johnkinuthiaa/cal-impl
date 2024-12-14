@@ -34,6 +34,7 @@ const Body =({title})=>{
             <div className={"card__container"} style={cardContainer}>
                 {
                     dataFetched.map((item,key)=>(
+
                         <Card currency={currencyPresent} title={item.name.trim()} image={item.images} key={key}/>
                     ))
                 }

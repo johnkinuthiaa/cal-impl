@@ -3,7 +3,7 @@ import "./ProductPage.css"
 import {Link} from "react-router-dom";
 import {Add} from "@mui/icons-material";
 import AccordionTransition from "../components/Accordion.jsx";
-import AsideContainer from "../components/AsideContainer.jsx";
+
 const ProductPage =()=>{
 
     const url =window.location.href
@@ -30,8 +30,15 @@ const ProductPage =()=>{
                 dataFetched.map((item,key)=> (
                     <div className={"products__page"} key={key}>
                         <div className={"aside__container__main"}>
-                            {item.images.map((image)=>(
-                                <AsideContainer img={image} onClick={() => setSelectedImage(image)}/>
+                            {item.images.map((image)=> (
+                                <div className={"aside__container"}>
+                                    <div>
+                                        <img src={image} onClick={() => {
+                                            setSelectedImage(image)
+                                        }}/>
+                                    </div>
+
+                                </div>
                             ))}
 
                         </div>
