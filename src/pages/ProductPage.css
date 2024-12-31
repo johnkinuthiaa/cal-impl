@@ -105,6 +105,7 @@
 .products__page__container__images{
     display: flex;
     flex-direction: row;
+    gap: 10px;
 }
 @media  screen and (max-width: 768px) {
     .products__page{
