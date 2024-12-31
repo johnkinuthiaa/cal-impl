@@ -102,6 +102,10 @@
 
     border-top: 1px solid rgba(0,0,0,0.3);
 }
+.products__page__container__images{
+    display: flex;
+    flex-direction: row;
+}
 @media  screen and (max-width: 768px) {
     .products__page{
         flex-direction: column;
