@@ -102,3 +102,33 @@
 
     border-top: 1px solid rgba(0,0,0,0.3);
 }
+@media  screen and (max-width: 768px) {
+    .products__page{
+        flex-direction: column;
+        margin: 10px;
+    }
+    .aside__container__main{
+        display: flex;
+        gap: 10px;
+    }
+    .products__page__image__container > img {
+        height: 604.7px;
+        width: 400px;
+        border-radius: 10px;
+    }
+    .products__page__container__images{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+    .products__page__description>h1{
+        font-size: 25px;
+        font-weight: bold;
+
+    }
+    .products__page__image__container{
+        flex: 1;
+        width: 300px;
+    }
+
+}

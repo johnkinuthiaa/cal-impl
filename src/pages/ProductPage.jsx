@@ -29,26 +29,29 @@ const ProductPage =()=>{
             {dataFetched?.length>0?(
                 dataFetched.map((item,key)=> (
                     <div className={"products__page"} key={key}>
-                        <div className={"aside__container__main"}>
-                            {item.images.map((image)=> (
-                                <div className={"aside__container"}>
-                                    <div>
-                                        <img src={image} onClick={() => {
-                                            setSelectedImage(image)
-                                        }}/>
+                        <div className={"products__page__container__images"}>
+                            <div className={"aside__container__main"}>
+                                {item.images.map((image) => (
+                                    <div className={"aside__container"}>
+                                        <div>
+                                            <img src={image} onClick={() => {
+                                                setSelectedImage(image)
+                                            }}/>
+                                        </div>
+
                                     </div>
+                                ))}
 
-                                </div>
-                            ))}
+                            </div>
+                            <div className={"products__page__image__container"}>
+                                <img src={selectedImage ? selectedImage : item.images[0]}/>
 
+                            </div>
                         </div>
-                        <div className={"products__page__image__container"}>
-                            <img src={selectedImage?selectedImage:item.images[0]}/>
 
-                        </div>
                         <div className={"products__page__description"}>
                             <h1>{item.name}</h1>
-                            <h3>$ {(item.price *quantity)}</h3>
+                            <h3>$ {(item.price * quantity)}</h3>
                             <div>
                                 <p>{item.description}</p>
                                 <p>select color: <span className={"color"}

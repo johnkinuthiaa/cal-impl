@@ -47,3 +47,25 @@ select{
     padding: 5px;
 
 }
+@media  screen and (max-width: 768px){
+    .header{
+        margin-top: 10px;
+        width: 100%;
+    }
+    .heading{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-left: 50px;
+    }
+    .navigation{
+        display: flex;
+        width: fit-content;
+        justify-content: space-between;
+        gap: 10px;
+
+    }
+    nav{
+        margin: 10px;
+    }
+}
