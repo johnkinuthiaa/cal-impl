@@ -18,7 +18,7 @@ const ProductPage =()=>{
         fetchDataByName()
     },[])
     const fetchDataByName =(async ()=>{
-        const response =await fetch(`http://localhost:8080/api/v1/shop/find/name?name=${title}`)
+        const response =await fetch(`https://ecs-shop.onrender.com/api/v1/shop/find/name?name=${title}`)
         const data =await response.json()
         setDataFetched(data.shopItemList)
 

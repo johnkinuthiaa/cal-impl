@@ -13,7 +13,7 @@ const Body =({title})=>{
         fetchData()
     },[])
     const fetchData =(async ()=>{
-        const response =await fetch("http://localhost:8080/api/v1/shop/get/all")
+        const response =await fetch("https://ecs-shop.onrender.com/api/v1/shop/get/all")
         if (response.ok){
             const data =await response.json()
             setData(data.shopItemList)
